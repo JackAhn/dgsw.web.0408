@@ -53,6 +53,10 @@ public class AttachmentController {
         String filepath = "";
         String filename = "";
 
+        User u = this.userService.findUser(id);
+        filepath = u.getStoragePath();
+        filename = u.getOriginalName();
+
         File file = new File(filepath);
         if(file.exists()==false)
             return;

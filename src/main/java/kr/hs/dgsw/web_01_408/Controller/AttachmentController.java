@@ -57,6 +57,9 @@ public class AttachmentController {
         filepath = u.getStoragePath();
         filename = u.getOriginalName();
 
+        if(filepath == null || filename == null)
+            return;
+
         File file = new File(filepath);
         if(file.exists()==false)
             return;
